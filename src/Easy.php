@@ -1,23 +1,27 @@
 <?php
 
     function sum($num1, $num2){
-        /* A resolução deve ser realizada aqui */
-        return;
+        $soma = $num1 + $num2;
+        return $soma;
     }
 
     function area($num1, $num2){
-        /* A resolução deve ser realizada aqui */
-        return;
+        $area = ($num1 * $num2) /2;
+        return $area;
     }
 
     function getLastItem(array $arr){
-        /* A resolução deve ser realizada aqui */
-        return;
+        $lstarr = end($arr);
+        return $lstarr;
     }
 
     function check(array $arr, $num){
-        /* A resolução deve ser realizada aqui */
-        return;
+        if (in_array($num, $arr)) {
+            return true;
+        }else {
+            return false;
+        }
+        
     }
 
     function animals($numGalinhas, $numVacas, $numPorcos){
