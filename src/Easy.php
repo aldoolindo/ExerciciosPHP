@@ -25,18 +25,21 @@
     }
 
     function animals($numGalinhas, $numVacas, $numPorcos){
-        /* A resolução deve ser realizada aqui */
-        return;
+        $pataGalinhas = 2;
+        $pataVacas = 4;
+        $pataPorcos = 4;
+        $resultado = ($numGalinhas * $pataGalinhas) + ($numVacas * $pataVacas) + ($numPorcos * $pataPorcos);
+        return $resultado;
     }
 
     function smallNumber($num1, $num2){
-        /* A resolução deve ser realizada aqui */
-        return;
+        $menorNumber = min($num1, $num2);
+        return $menorNumber;
     }
 
     function findSmallestNumber(array $arr){
-        /* A resolução deve ser realizada aqui */
-        return;
+        $menorNmbrArray = min($arr);
+        return $menorNmbrArray;
     }
 
     function missNumber(array $arr){
