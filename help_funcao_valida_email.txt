@@ -1,0 +1,34 @@
+Aqui está a explicação detalhada de cada if na função validarEmail:
+
+1. if (strpos($email, '@') === false) { return false; }
+Esta instrução verifica se o email contém o caractere @:
+
+strpos($email, '@') retorna a posição do caractere @ na string $email, ou false se não for encontrado.
+strpos($email, '@') === false verifica se o @ não está presente.
+Se não encontrar o @, a função retorna imediatamente false, indicando que o email é inválido.
+2. $partes = explode('@', $email); if (count($partes) !== 2 || empty($partes[0])) { return false; }
+Esta parte verifica se há pelo menos um caractere antes do @:
+
+explode('@', $email) divide a string $email em duas partes: antes do @ e depois do @.
+count($partes) !== 2 verifica se o email não foi dividido exatamente em duas partes (antes e depois do @).
+empty($partes[0]) verifica se a parte antes do @ está vazia.
+Se qualquer uma das condições acima for verdadeira, significa que não há pelo menos um caractere antes do @, então a função retorna false.
+3. if (strpos($partes[1], '.') === false) { return false; }
+Esta verificação garante que há um ponto (.) depois do @ na parte do domínio do email:
+
+strpos($partes[1], '.') verifica se há um ponto (.) na parte depois do @.
+Se não encontrar um ponto, significa que o domínio do email não está formatado corretamente, então a função retorna false.
+4. $posicao_arroba = strpos($email, '@'); $posicao_ponto = strpos($email, '.', $posicao_arroba); if ($posicao_arroba > $posicao_ponto || $posicao_arroba === strlen($email) - 1 || $posicao_ponto === strlen($email) - 1) { return false; }
+Esta parte verifica se o @ e o . estão em posições válidas:
+
+strpos($email, '@') e strpos($email, '.', $posicao_arroba) encontram as posições do @ e do primeiro . após o @, respectivamente.
+$posicao_arroba > $posicao_ponto verifica se o @ está antes do ..
+$posicao_arroba === strlen($email) - 1 verifica se o @ está no final do email.
+$posicao_ponto === strlen($email) - 1 verifica se o . está no final do email.
+Se qualquer uma dessas condições for verdadeira, significa que o formato do email não está correto, então a função retorna false.
+Retorno final
+Se o email passar por todas as verificações sem retornar false, significa que ele atende aos critérios especificados e a função retorna true, indicando que o email é válido.
+Essa função encapsula todas as verificações necessárias para validar um endereço de e-mail com base nos critérios que foram descritos inicialmente.
+
+
+

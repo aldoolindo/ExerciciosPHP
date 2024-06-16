@@ -27,6 +27,18 @@ for ($i = 0; $i <$lenArray; $i++) {
   array_push($arrayNumeros, $arrayAleatorio);
 }
 
+//Miss Number
+$arrayMissNumeros = array(1, 2, 4, 5, 6, 7, 8, 9, 10);
+
+//Função é natal
+$dataHoje = date('Y-m-d');
+
+//Função email válido
+$email1 = 'aldoolindo@gmail.com';
+$email2 = 'aldoolindo@com';
+$email3 = '@gmail.com';
+
+
 
 echo "<h2>Função Soma</h2>";
 $soma = 'sum';
@@ -64,7 +76,44 @@ echo "O menor número é o " . $smallNumber . " .<br>";
 echo "<h2>Função SmallNumber no array</h2>";
 $menorNmbrArray = 'findSmallestNumber';
 $menorNmbrArray = findSmallestNumber($arrayNumeros);
-echo $menorNmbrArray;
+echo "O menor número do array é " . $menorNmbrArray . "<br>";
+
+echo "<h2>Função Número ausente</h2>";
+$numAusente = 'missNumber';
+$numAusente = missNumber($arrayMissNumeros);
+echo "O número ausente no array é o número " . $numAusente . "<br>";
+
+echo "<h2>Função hoje é natal?</h2>";
+$hojeNatal = 'isChristmas';
+$hojeNatal = isChristmas($dataHoje);
+if ($hojeNatal == 'true'){
+  echo "Hoje " . $dataHoje . " é Natal<br>";
+}else {
+  echo "Hoje " . $dataHoje . " não é natal!<br>";
+}
+
+echo "<h2>Função validação e-mail</h2>";
+$validaEmail = 'isValidEmail';
+if(isValidEmail($email1) === true ){
+  echo "O e-mail " . $email1 . " é válido <br>";
+}else {
+  echo "O e-mail " . $email1 . " é inválido <br>";
+
+}
+
+if(isValidEmail($email2) === true ){
+  echo "O e-mail " . $email2 . " é válido <br>";
+}else {
+  echo "O e-mail " . $email2 . " é inválido <br>";
+
+}
+
+if(isValidEmail($email3) === true ){
+  echo "O e-mail " . $email3 . " é válido <br>";
+}else {
+  echo "O e-mail " . $email3 . " é inválido <br>";
+
+}
 
 
 
